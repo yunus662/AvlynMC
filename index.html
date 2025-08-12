@@ -1,134 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AvlynMC - Minecraft Server</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AvlynMC - Minecraft Server</title>
 
-    <!-- Minecraft Font -->
-    <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<!-- Google Font for Professional Look -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        body {
-            font-family: 'Minecraft', sans-serif;
-            background-color: #0e0e0e;
-            color: white;
-            text-align: center;
-            overflow-x: hidden;
-        }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #0e0e0e;
+        color: white;
+    }
 
-        /* Animated background */
-        header {
-            position: relative;
-            height: 100vh;
-            background: url('https://i.imgur.com/ao3oJjS.png') repeat;
-            background-size: cover;
-            animation: moveBg 30s linear infinite;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    /* Navbar */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    nav a:hover {
+        color: #ffbb00;
+    }
 
-        @keyframes moveBg {
-            from { background-position: 0 0; }
-            to { background-position: 1000px 0; }
-        }
+    /* Hero Section */
+    header {
+        height: 100vh;
+        background: url('avlyn.png') center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 3.5em;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+    .ip-box {
+        background: rgba(0,0,0,0.7);
+        padding: 12px 25px;
+        margin-top: 20px;
+        border-radius: 8px;
+        font-size: 1.5em;
+        border: 2px solid #ffbb00;
+    }
+    button {
+        background-color: #ffbb00;
+        border: none;
+        padding: 12px 25px;
+        margin-top: 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 1em;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    button:hover {
+        background-color: #ffaa00;
+        transform: scale(1.05);
+    }
 
-        header h1 {
-            font-size: 4em;
-            text-shadow: 2px 2px 6px black;
-            animation: fadeIn 2s ease-out;
-        }
+    /* Sections */
+    section {
+        padding: 80px 20px;
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+    section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #ffbb00;
+    }
+    .placeholder {
+        font-size: 1.2em;
+        color: #ccc;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .ip-box {
-            background: rgba(0,0,0,0.7);
-            display: inline-block;
-            padding: 12px 25px;
-            margin-top: 20px;
-            border-radius: 8px;
-            font-size: 1.5em;
-            border: 2px solid #ffbb00;
-        }
-
-        button {
-            background-color: #ffbb00;
-            border: none;
-            padding: 12px 25px;
-            margin-top: 15px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #ffaa00;
-            transform: scale(1.05);
-        }
-
-        section {
-            padding: 60px 20px;
-        }
-
-        h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #ffbb00;
-        }
-
-        .placeholder {
-            font-size: 1.5em;
-            color: #aaa;
-        }
-
-        footer {
-            background: #111;
-            padding: 20px;
-            margin-top: 50px;
-            font-size: 0.9em;
-        }
-
-        a {
-            color: #ffbb00;
-            text-decoration: none;
-        }
-        a:hover { text-decoration: underline; }
-    </style>
+    /* Footer */
+    footer {
+        background: #111;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9em;
+        margin-top: 50px;
+    }
+    a {
+        color: #ffbb00;
+    }
+</style>
 </head>
 <body>
 
-<header>
+<!-- Navigation -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#store">Store</a>
+    <a href="#vote">Vote</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Hero Section -->
+<header id="home">
     <h1>Welcome to AvlynMC</h1>
     <div class="ip-box" id="server-ip">play.avlynmc.net</div><br>
     <button onclick="copyIP()">Copy IP</button>
 </header>
 
+<!-- About Section -->
 <section id="about">
     <h2>About & Features</h2>
     <p class="placeholder">🚧 This section is under development 🚧</p>
 </section>
 
-<section id="vote">
-    <h2>Vote & Store</h2>
+<!-- Store Section -->
+<section id="store">
+    <h2>Store</h2>
     <p class="placeholder">🚧 This section is under development 🚧</p>
 </section>
 
+<!-- Vote Section -->
+<section id="vote">
+    <h2>Vote</h2>
+    <p class="placeholder">🚧 This section is under development 🚧</p>
+</section>
+
+<!-- Contact Section -->
 <section id="contact">
     <h2>Contact Us</h2>
     <p>Discord Username: <strong>_yaayyy</strong></p>
     <p>Join our Discord server: <a href="https://discord.gg/FVN5zywF" target="_blank">Click here</a></p>
 </section>
 
+<!-- Footer -->
 <footer>
     <p>© 2025 AvlynMC. All rights reserved.</p>
 </footer>
